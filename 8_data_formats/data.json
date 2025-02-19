@@ -1,0 +1,23 @@
+{
+	"type": "humidity",
+	"sensorId": 123,
+	"unit": "%",
+	"data": [
+		{
+			"value": 43,
+			"eventId": 0
+		},
+		{
+			"value": 45,
+			"eventId": 1
+		},
+		{
+			"value": 42,
+			"eventId": 2
+		},
+		{
+			"value": 48,
+			"eventId": 3
+		}		
+	]
+}

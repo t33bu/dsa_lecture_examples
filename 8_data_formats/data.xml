@@ -1,0 +1,22 @@
+<!-- Humidity sensor -->
+<sensorData>
+	<type>humidity</type>
+	<sensorId>123</sensorId>
+	<unit>%</unit>
+	<data>
+		<value>43</value>
+		<eventId>0</eventId>
+	</data>
+	<data>
+		<value>45</value>
+		<eventId>1</eventId>
+	</data>
+	<data>
+		<value>42</value>
+		<eventId>2</eventId>
+	</data>
+	<data>
+		<value>48</value>
+		<eventId>3</eventId>
+	</data>
+</sensorData>
