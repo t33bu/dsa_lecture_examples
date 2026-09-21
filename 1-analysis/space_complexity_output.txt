@@ -1,0 +1,187 @@
+============================================================
+SPACE COMPLEXITY ANALYSIS: s(n) Examples
+============================================================
+
+============================================================
+O(1) - CONSTANT SPACE
+============================================================
+
+1. FIND MAX IN PLACE - s(n) = 1 + 1 = 2 = O(1)
+----------------------------------------
+   Variables: max_val(1) + i(1) = 2
+   n =    10  ->  s(n) = 2 (constant, doesn't grow)
+   n =   100  ->  s(n) = 2 (constant, doesn't grow)
+   n =  1000  ->  s(n) = 2 (constant, doesn't grow)
+
+2. SUM ELEMENTS - s(n) = 1 + 1 = 2 = O(1)
+----------------------------------------
+   Variables: total(1) + num(1) = 2
+   n =    10  ->  s(n) = 2 (constant)
+   n =   100  ->  s(n) = 2 (constant)
+   n =  1000  ->  s(n) = 2 (constant)
+
+3. REVERSE IN PLACE - s(n) = 1 + 1 = 2 = O(1)
+----------------------------------------
+   Variables: left(1) + right(1) = 2
+   n =    10  ->  s(n) = 2 (constant)
+   n =   100  ->  s(n) = 2 (constant)
+   n =  1000  ->  s(n) = 2 (constant)
+
+4. BUBBLE SORT IN PLACE - s(n) = 1 + 1 + 1 = 3 = O(1)
+----------------------------------------
+   Variables: n(1) + i(1) + j(1) = 3
+   n =    10  ->  s(n) = 3 (constant)
+   n =    50  ->  s(n) = 3 (constant)
+   n =   100  ->  s(n) = 3 (constant)
+
+============================================================
+O(log n) - LOGARITHMIC SPACE
+============================================================
+
+5. BINARY SEARCH RECURSIVE - s(n) = 5 * log(n) = O(log n)
+----------------------------------------
+   Stack frames: log(n), each with 5 variables
+   n =    10  ->  s(n) = 5 * 4 = 20 vars
+   n =   100  ->  s(n) = 5 * 7 = 35 vars
+   n =  1000  ->  s(n) = 5 * 10 = 50 vars
+
+   Compare: BINARY SEARCH ITERATIVE - s(n) = 1+1+1 = 3 = O(1)
+----------------------------------------
+   Variables: left(1) + right(1) + mid(1) = 3
+   n =    10  ->  s(n) = 3 (constant, no recursion)
+   n =   100  ->  s(n) = 3 (constant, no recursion)
+   n =  1000  ->  s(n) = 3 (constant, no recursion)
+
+============================================================
+O(n) - LINEAR SPACE
+============================================================
+
+6. CREATE COPY - s(n) = n + 1 = O(n)
+----------------------------------------
+   Elements: copy array(n) + loop var(1)
+   n =    10  ->  s(n) = 10 + 1 = 11
+   n =   100  ->  s(n) = 100 + 1 = 101
+   n =  1000  ->  s(n) = 1000 + 1 = 1001
+
+7. REVERSE TO NEW ARRAY - s(n) = n + 1 = O(n)
+----------------------------------------
+   Elements: reversed array(n) + loop var(1)
+   n =    10  ->  s(n) = 10 + 1 = 11
+   n =   100  ->  s(n) = 100 + 1 = 101
+   n =  1000  ->  s(n) = 1000 + 1 = 1001
+
+8. COUNT FREQUENCY (HashMap) - s(n) = n + 1 = O(n)
+----------------------------------------
+   Elements: dictionary(n keys) + loop var(1)
+   n =    10  ->  s(n) = 10 + 1 = 11
+   n =   100  ->  s(n) = 100 + 1 = 101
+   n =  1000  ->  s(n) = 1000 + 1 = 1001
+
+9. FIBONACCI WITH MEMOIZATION - s(n) = (n+1) + 2 = n + 3 = O(n)
+----------------------------------------
+   Elements: memo dict(n+1 entries) + recursion vars(2)
+   n =    10  ->  s(n) = 11 + 2 = 13
+   n =    20  ->  s(n) = 21 + 2 = 23
+   n =    30  ->  s(n) = 31 + 2 = 33
+
+============================================================
+O(n^2) - QUADRATIC SPACE
+============================================================
+
+10. CREATE n x n MATRIX - s(n) = n*n + 2 = n^2 + 2 = O(n^2)
+----------------------------------------
+    Elements: matrix(n*n) + loop vars(2)
+    n =  10  ->  s(n) = 10*10 + 2 = 102
+    n =  50  ->  s(n) = 50*50 + 2 = 2502
+    n = 100  ->  s(n) = 100*100 + 2 = 10002
+
+11. ADJACENCY MATRIX (Graph) - s(n) = n * n = n^2 = O(n^2)
+----------------------------------------
+    Elements: n rows * n columns
+    n =  10 nodes  ->  s(n) = 10 * 10 = 100
+    n =  50 nodes  ->  s(n) = 50 * 50 = 2500
+    n = 100 nodes  ->  s(n) = 100 * 100 = 10000
+
+12. ALL PAIRS DISTANCES - s(n) = n^2 + 2 = O(n^2)
+----------------------------------------
+    Elements: matrix(n^2) + loop vars i,j(2)
+    n =  10  ->  s(n) = 10^2 + 2 = 102
+    n =  50  ->  s(n) = 50^2 + 2 = 2502
+    n = 100  ->  s(n) = 100^2 + 2 = 10002
+
+============================================================
+O(n^3) - CUBIC SPACE
+============================================================
+
+13. CREATE 3D MATRIX - s(n) = n*n*n + 3 = n^3 + 3 = O(n^3)
+----------------------------------------
+    Elements: matrix(n*n*n) + loop vars i,j,k(3)
+    n =  5  ->  s(n) = 5*5*5 + 3 = 128
+    n = 10  ->  s(n) = 10*10*10 + 3 = 1003
+    n = 20  ->  s(n) = 20*20*20 + 3 = 8003
+
+14. ALL TRIPLET SUMS - s(n) = n^3 + 4 = O(n^3)
+----------------------------------------
+    Elements: triplets(n^3) + vars n,i,j,k(4)
+    n =  5  ->  s(n) = 5^3 + 4 = 129
+    n = 10  ->  s(n) = 10^3 + 4 = 1004
+    n = 15  ->  s(n) = 15^3 + 4 = 3379
+
+15. 3D VOXEL GRID - s(n) = n^3 + 3 = O(n^3)
+----------------------------------------
+    Elements: voxels(n^3) + loop vars x,y,z(3)
+    n = 10  ->  s(n) = 10^3 + 3 = 1003
+    n = 20  ->  s(n) = 20^3 + 3 = 8003
+    n = 50  ->  s(n) = 50^3 + 3 = 125003
+
+16. FLOYD-WARSHALL ALL STEPS - s(n) = n^3 + n^2 + 10 = O(n^3)
+----------------------------------------
+    Elements: (n+1) matrices of n^2 + temp vars(~10)
+    n =  5  ->  s(n) = 6*5^2 + 10 = 160
+    n = 10  ->  s(n) = 11*10^2 + 10 = 1110
+    n = 15  ->  s(n) = 16*15^2 + 10 = 3610
+
+    WARNING: Cubic space grows VERY fast!
+    ----------------------------------------
+    n =  10  ->  n^3 + 3 = 1000 + 3 =        1,003
+    n =  50  ->  n^3 + 3 = 125000 + 3 =      125,003
+    n = 100  ->  n^3 + 3 = 1000000 + 3 =    1,000,003
+
+============================================================
+SUMMARY: Space Complexity Comparison
+============================================================
+
+    Complexity   Complete s(n)            n=10           n=100
+    ----------------------------------------------------------------
+    O(1)         s(n) = 2                 2              2
+    O(log n)     s(n) = 5*log(n)          5*4 = 20       5*7 = 35
+    O(n)         s(n) = n + 1             10 + 1 = 11    100 + 1 = 101
+    O(n^2)       s(n) = n^2 + 2           100 + 2        10,000 + 2
+    O(n^3)       s(n) = n^3 + 3           1,000 + 3      1,000,000 + 3
+
+    Key insight: Constants become negligible as n grows!
+
+    Why we simplify:
+    -------------------------------------------------------
+    - n=100: n^2 + 2 = 10,002  (the +2 is 0.02% of total)
+    - n=1000: n^2 + 2 = 1,000,002  (the +2 is 0.0002%)
+    - Big-O focuses on the DOMINANT term that matters at scale
+
+    Practical implications:
+    -------------------------------------------------------
+    - O(1):    Can process ANY size data (if you have time)
+    - O(n):    Limited by available RAM
+    - O(n^2):  100 items = ~10,000 cells
+               1000 items = ~1 million cells
+    - O(n^3):  100 items = 1 million cells
+               1000 items = 1 BILLION cells (will crash!)
+
+    Real-world O(n^3) examples:
+    -------------------------------------------------------
+    - 3D video games: voxel worlds (Minecraft uses chunks)
+    - Medical imaging: CT scans (512x512x100 = 26 million voxels)
+    - Scientific simulations: 3D fluid dynamics
+    - Graph algorithms: storing all intermediate states
+
+    Trade-off: O(n^3) algorithms often need optimization
+    or chunking to handle real-world data sizes.
